@@ -10,8 +10,8 @@ Inspired by [date-fns](https://date-fns.org/)
 
 - Use `instance.method()` for added methods.
 - Use `instance.property` for added getter properties.
-- Use `Date.method()` for added static methods.
-- Use `Date.property` for added static getter properties.
+- Use `DateTimeExtenstion.method()` for added static methods.
+- Use `DateTimeExtenstion.property` for added static getter properties.
 
 ``` bash
 DE (String): Heute ist 18-Juni-2020
@@ -30,7 +30,7 @@ Tomorrow: 2020-06-19 08:33:52.700579
   const pattern = '\'Heute ist\' dd-MMMM-yyyy';
   final n = DateTime.now();
   final de_String = DateTime.now().format(pattern, 'de_DE');
-  final de_Date = Date.parse(de_String, pattern: pattern, locale: 'de_DE');
+  final de_Date = DateTimeExtenstion.parse(de_String, pattern: pattern, locale: 'de_DE');
   print(
     'DE (String): $de_String',
   );
@@ -59,13 +59,13 @@ Tomorrow: 2020-06-19 08:33:52.700579
   );
   print('Closest to now ($now): $closest (${closest.timeago()})');
 
-  print(Date.today is DateTime);
+  print(DateTimeExtenstion.today is DateTime);
 
   print("Human String: " +
       DateTime.parse('2014-11-20T16:51:30.000Z').toHumanString());
 
-  print("Yesterday: " + (Date.today - Duration(days: 1)).toString());
-  print("Tomorrow: " + (Date.today + Duration(days: 1)).toString());
+  print("Yesterday: " + (DateTimeExtenstion.today - Duration(days: 1)).toString());
+  print("Tomorrow: " + (DateTimeExtenstion.today + Duration(days: 1)).toString());
 ```
 
 ## LICENSE
